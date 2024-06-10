@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb; // Rigidbody 컴포넌트
     public Transform cam; // 카메라 Transform
-    public bool isGetItem = false;
 
     public float speed = 6.0f; // 이동 속도
     public float turnSmoothTime = 0.1f; // 회전이 부드럽게 이루어지는 시간
@@ -20,8 +19,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float crouchHeight = 0.5f; // 앉기 시 캐릭터 높이
 
+    
     void Start()
     {
+
         // Rigidbody 컴포넌트 가져오기
         rb = GetComponent<Rigidbody>();
     }
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.instance.ActivateTextOff();
             GameManager.instance.DeactivateItem(currentItem);
-            isGetItem = true;
+            
             currentItem = null; // 참조 제거
         }
 
@@ -69,32 +70,58 @@ public class PlayerController : MonoBehaviour
             // Rigidbody를 이용한 캐릭터 이동
             rb.MovePosition(transform.position + moveDir.normalized * speed * Time.fixedDeltaTime);
         }
-
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            
-        }
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Item"))
+        if (other.CompareTag("Item") && other.CompareTag("Interaction"))
         {
             GameManager.instance.ActivateTextOn();
             currentItem = other.gameObject; // 현재 아이템 설정
             Debug.Log("충돌");
         }
+    }*/
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Item":
+                GameManager.instance.ActivateTextOn();
+                currentItem = other.gameObject; // 현재 아이템 설정
+                Debug.Log("아이템과 상호작용 충돌");
+                break;
+            case "Interaction":
+                GameManager.instance.ActivateTextOn();
+                
+                Debug.Log("상호작용 충돌");
+                break;
+            default:
+                break;
+        }
     }
-
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Item"))
+        /*if (other.CompareTag("Item") && other.CompareTag("Interaction"))
         {
             // 아이템과의 충돌이 끝나면 텍스트를 비활성화합니다.
             GameManager.instance.ActivateTextOff();
             isGetItem = false;
             Debug.Log("충돌안함");
+        }*/
+
+        switch (other.tag)
+        {
+            case "Item":
+                GameManager.instance.ActivateTextOff();
+                Debug.Log("아이템과 상호작용 충돌");
+                break;
+            case "Interaction":
+                GameManager.instance.ActivateTextOff();
+                Debug.Log("상호작용 충돌");
+                break;
+            default:
+                break;
         }
     }
 }

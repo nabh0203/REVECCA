@@ -105,9 +105,9 @@ using UnityEngine;
 
 public class ItemManager : Interactable
 {
-    public Material outline;
+    /*public Material outline;
     private Renderer renderers;
-    private List<Material> materialList = new List<Material>();
+    private List<Material> materialList = new List<Material>();*/
 
     protected override void Start()
     {
@@ -116,25 +116,27 @@ public class ItemManager : Interactable
     }
 
     protected override void OnInteract()
-    {
+    {/*
         renderers = this.GetComponent<Renderer>();
 
         materialList.Clear();
         materialList.AddRange(renderers.sharedMaterials);
         materialList.Add(outline);
 
-        renderers.materials = materialList.ToArray();
+        renderers.materials = materialList.ToArray();*/
+        return;
     }
 
     protected override void OnExit()
     {
-        Renderer renderer = this.GetComponent<Renderer>();
+        /*Renderer renderer = this.GetComponent<Renderer>();
 
         materialList.Clear();
         materialList.AddRange(renderer.sharedMaterials);
         materialList.Remove(outline);
 
-        renderer.materials = materialList.ToArray();
+        renderer.materials = materialList.ToArray();*/
+        return;
     }
 
     public void DeactivateItem()
@@ -147,7 +149,6 @@ public class ItemManager : Interactable
     {
         // 퀘스트 완료 여부를 확인하는 로직을 구현하세요
         // 예를 들어:
-        isQuestCompleted = true;
         return isQuestCompleted;
     }
 }

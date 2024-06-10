@@ -95,12 +95,14 @@ public class PasswordChecker : MonoBehaviour
 }
 */
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class PasswordChecker : Interactable
 {
     public TextMeshProUGUI resultText;
     public TextMeshProUGUI inputDisplayText;
+    public TMP_InputField inputField;
     public GameObject sucessObject;
     private string inputPassword = "";
     [SerializeField]
@@ -113,26 +115,40 @@ public class PasswordChecker : Interactable
 
     protected override void OnInteract()
     {
-        inputPassword = "";
-        UpdateDisplay();
+        isQuestCompleted = true;
     }
 
     protected override void OnExit()
     {
-        // 암호 입력 창 비활성화
+        isQuestCompleted = false;
     }
 
     void Update()
     {
-        HandleInput();
+        // npcObject가 null이 아닌 경우에만 F키 입력을 확인
+        if (isQuestCompleted && Input.GetKeyDown(KeyCode.F))
+        {
+            GameManager.instance.ItemOff();
+            isGetInteraction = true;
+            Debug.Log(isGetInteraction);
+            if (Input.GetKeyDown(KeyCode.F) && isGetInteraction)
+            {
+                HandleInput();
+                
+            }
+        }
     }
 
     void HandleInput()
     {
+        interactableObject.SetActive(true);
+        inputPassword = "";
+        UpdateDisplay();
         foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
         {
-            if (Input.GetKeyDown(keyCode))
+            if (Input.GetKeyDown(keyCode) && isQuestCompleted)
             {
+                Debug.Log("암호입력 중");
                 // 숫자 키 입력 감지 및 4자리까지만 입력 허용
                 if (inputPassword.Length < 4)
                 {
@@ -169,13 +185,14 @@ public class PasswordChecker : Interactable
     void CheckPassword()
     {
         // 암호 확인 로직
-        if (inputPassword == correctPassword)
+        if (inputPassword == correctPassword && isQuestCompleted)
         {
             resultText.text = "암호가 정확합니다!";
             resultText.color = Color.green;
             sucessObject.SetActive(false);
+            ProceedQuest();
         }
-        else if (inputPassword.Length >= correctPassword.Length)
+        else if (inputPassword.Length >= correctPassword.Length && isQuestCompleted)
         {
             resultText.text = "암호가 틀렸습니다.";
             resultText.color = Color.red;
@@ -192,7 +209,6 @@ public class PasswordChecker : Interactable
     {
         // 퀘스트 완료 여부를 확인하는 로직을 구현하세요
         // 예를 들어:
-        isQuestCompleted = true;
-        return isQuestCompleted;
+        return isQuestCompleted; 
     }
 }

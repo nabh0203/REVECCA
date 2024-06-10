@@ -7,12 +7,19 @@ public abstract class Interactable : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
     public GameObject interactableObject;
+    public GameObject otehrInteractableObject;
+    public Material outline;
+    private Renderer renderers;
+    private List<Material> materialList = new List<Material>();
+
+    public bool isGetInteraction;
 
     // 퀘스트의 진행 상태를 나타내는 bool 변수
-    protected bool isQuestCompleted = false;
+    protected bool isQuestCompleted;
 
     protected virtual void Start()
     {
+        isGetInteraction = false;
         interactableObject.SetActive(false);
     }
 
@@ -20,8 +27,15 @@ public abstract class Interactable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            interactableObject.SetActive(true);
+            
             OnInteract();
+            renderers = this.GetComponent<Renderer>();
+
+            materialList.Clear();
+            materialList.AddRange(renderers.sharedMaterials);
+            materialList.Add(outline);
+
+            renderers.materials = materialList.ToArray();
         }
     }
 
@@ -31,22 +45,40 @@ public abstract class Interactable : MonoBehaviour
         {
             interactableObject.SetActive(false);
             OnExit();
+
+            Renderer renderer = this.GetComponent<Renderer>();
+
+            materialList.Clear();
+            materialList.AddRange(renderer.sharedMaterials);
+            materialList.Remove(outline);
+
+            renderer.materials = materialList.ToArray();
         }
     }
 
     protected virtual void ProceedQuest()
     {
-        if (CheckQuestCompletion())
+        if (isQuestCompleted)
         {
             Debug.Log("퀘스트 완료!");
-            // 퀘스트 완료 관련 로직 구현
+            interactableObject.SetActive(false);
+
+            if (otehrInteractableObject != null)
+            {
+                otehrInteractableObject.SetActive(true);
+            }
         }
         else
         {
             Debug.Log("퀘스트 진행 중...");
-            // 퀘스트 진행 중 관련 로직 구현
+
+            if (otehrInteractableObject != null)
+            {
+                otehrInteractableObject.SetActive(false);
+            }
         }
     }
+
     protected abstract bool CheckQuestCompletion();
     protected abstract void OnInteract();
     protected abstract void OnExit();

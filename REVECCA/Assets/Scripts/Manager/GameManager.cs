@@ -102,7 +102,6 @@ public class GameManager : MonoBehaviour
 
     // 아이템 번호를 관리하는 배열
     public int[] itemNumbers;
-
     void Awake()
     {
         if (instance == null)
