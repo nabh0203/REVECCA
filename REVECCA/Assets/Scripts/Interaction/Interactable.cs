@@ -8,9 +8,6 @@ public abstract class Interactable : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public GameObject interactableObject;
     public GameObject otehrInteractableObject;
-    public Material outline;
-    private Renderer renderers;
-    private List<Material> materialList = new List<Material>();
 
     public bool isGetInteraction;
 
@@ -27,15 +24,7 @@ public abstract class Interactable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            
             OnInteract();
-            renderers = this.GetComponent<Renderer>();
-
-            materialList.Clear();
-            materialList.AddRange(renderers.sharedMaterials);
-            materialList.Add(outline);
-
-            renderers.materials = materialList.ToArray();
         }
     }
 
@@ -45,14 +34,6 @@ public abstract class Interactable : MonoBehaviour
         {
             interactableObject.SetActive(false);
             OnExit();
-
-            Renderer renderer = this.GetComponent<Renderer>();
-
-            materialList.Clear();
-            materialList.AddRange(renderer.sharedMaterials);
-            materialList.Remove(outline);
-
-            renderer.materials = materialList.ToArray();
         }
     }
 

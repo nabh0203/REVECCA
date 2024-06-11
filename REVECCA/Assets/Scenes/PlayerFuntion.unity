@@ -279,6 +279,7 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   originalHeight: 1.6
   crouchHeight: 1
+  outline: {fileID: 2100000, guid: c30b1f9bcee606c41be6b62273718724, type: 2}
 --- !u!1 &21943728 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8513465853756091319, guid: dcddb6517f29dd240bd5cded4cbc087b, type: 3}

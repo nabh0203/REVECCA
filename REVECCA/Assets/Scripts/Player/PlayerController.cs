@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-
+    [Header("Player")]
     private Rigidbody rb; // Rigidbody 컴포넌트
     public Transform cam; // 카메라 Transform
 
@@ -19,7 +20,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float crouchHeight = 0.5f; // 앉기 시 캐릭터 높이
 
-    
+
+    [Header("OutLine")]
+    private Renderer renderers;
+    private List<Material> materialList = new List<Material>();
+    public Material outline;
+
+
     void Start()
     {
 
@@ -72,16 +79,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Item") && other.CompareTag("Interaction"))
-        {
-            GameManager.instance.ActivateTextOn();
-            currentItem = other.gameObject; // 현재 아이템 설정
-            Debug.Log("충돌");
-        }
-    }*/
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
@@ -90,20 +87,17 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.ActivateTextOn();
                 currentItem = other.gameObject; // 현재 아이템 설정
                 Debug.Log("아이템과 상호작용 충돌");
+                SetRendererMaterials(other);
                 break;
             case "Interaction":
                 GameManager.instance.ActivateTextOn();
                 Debug.Log("상호작용 충돌");
+                SetRendererMaterials(other);
                 break;
             case "Hint":
                 GameManager.instance.ActivateTextOn();
-                for (int i = 0; i < GameManager.instance.Ishint.Length; i++) 
-                {
-                    GameManager.instance.Ishint[i] = true;
-                    Debug.Log(GameManager.instance.Ishint[i]);
-                }
                 Debug.Log("상호작용 충돌");
-                
+                SetRendererMaterials(other);
                 break;
             default:
                 break;
@@ -111,26 +105,49 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        /*if (other.CompareTag("Item") && other.CompareTag("Interaction"))
-        {
-            // 아이템과의 충돌이 끝나면 텍스트를 비활성화합니다.
-            GameManager.instance.ActivateTextOff();
-            isGetItem = false;
-            Debug.Log("충돌안함");
-        }*/
-
         switch (other.tag)
         {
             case "Item":
                 GameManager.instance.ActivateTextOff();
                 Debug.Log("아이템과 상호작용 충돌");
+                CloseRendererMaterials(other);
                 break;
             case "Interaction":
                 GameManager.instance.ActivateTextOff();
                 Debug.Log("상호작용 충돌");
+                CloseRendererMaterials(other);
+                break;
+            case "Hint":
+                GameManager.instance.ActivateTextOff();
+                Debug.Log("상호작용 충돌");
+                CloseRendererMaterials(other);
                 break;
             default:
                 break;
         }
+    }
+
+    private void SetRendererMaterials(Collider other)
+    {
+        Renderer renderers = other.gameObject.GetComponent<Renderer>();
+
+        if (renderers != null)
+        {
+            materialList.Clear();
+            materialList.AddRange(renderers.sharedMaterials);
+            materialList.Add(outline);
+
+            renderers.materials = materialList.ToArray();
+        }
+    }
+    private void CloseRendererMaterials(Collider other)
+    {
+        Renderer renderer = other.gameObject.GetComponent<Renderer>();
+
+        materialList.Clear();
+        materialList.AddRange(renderer.sharedMaterials);
+        materialList.Remove(outline);
+
+        renderer.materials = materialList.ToArray();
     }
 }
