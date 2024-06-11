@@ -93,8 +93,17 @@ public class PlayerController : MonoBehaviour
                 break;
             case "Interaction":
                 GameManager.instance.ActivateTextOn();
-                
                 Debug.Log("상호작용 충돌");
+                break;
+            case "Hint":
+                GameManager.instance.ActivateTextOn();
+                for (int i = 0; i < GameManager.instance.Ishint.Length; i++) 
+                {
+                    GameManager.instance.Ishint[i] = true;
+                    Debug.Log(GameManager.instance.Ishint[i]);
+                }
+                Debug.Log("상호작용 충돌");
+                
                 break;
             default:
                 break;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - Interaction
+  - Hint
   layers:
   - Default
   - TransparentFX

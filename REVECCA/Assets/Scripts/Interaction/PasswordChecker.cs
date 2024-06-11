@@ -124,7 +124,7 @@ public class PasswordChecker : Interactable
 {
     public TextMeshProUGUI resultText;
     public TMP_InputField inputPassword;
-    public GameObject successObject;
+    //public GameObject successObject;
 
     [SerializeField]
     private string correctPassword = "1234";
@@ -193,7 +193,7 @@ public class PasswordChecker : Interactable
         {
             resultText.text = "암호가 정확합니다!";
             resultText.color = Color.green;
-            successObject.SetActive(false);
+            //successObject.SetActive(false);
             ProceedQuest();
         }
         else
