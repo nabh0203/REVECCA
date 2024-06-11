@@ -37,16 +37,22 @@ public class FadeManager : MonoBehaviour
         yield return StartCoroutine(Fade(0f));
     }
 
-    private IEnumerator Fade(float targetAlpha)
+private IEnumerator Fade(float targetAlpha)
+{
+    if (fadeCanvasGroup == null || fadeCanvasGroup.gameObject == null)
     {
-        fadeCanvasGroup.blocksRaycasts = true;
-        float fadeSpeed = Mathf.Abs(fadeCanvasGroup.alpha - targetAlpha) / fadeDuration;
-        while (!Mathf.Approximately(fadeCanvasGroup.alpha, targetAlpha))
-        {
-            fadeCanvasGroup.alpha = Mathf.MoveTowards(fadeCanvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);
-            yield return null;
-        }
-        fadeCanvasGroup.alpha = targetAlpha;
-        fadeCanvasGroup.blocksRaycasts = false;
+        yield break; // CanvasGroup이 null이거나 파괴된 경우에는 더 이상 진행하지 않음
     }
+
+    fadeCanvasGroup.blocksRaycasts = true;
+    float fadeSpeed = Mathf.Abs(fadeCanvasGroup.alpha - targetAlpha) / fadeDuration;
+    while (!Mathf.Approximately(fadeCanvasGroup.alpha, targetAlpha))
+    {
+        fadeCanvasGroup.alpha = Mathf.MoveTowards(fadeCanvasGroup.alpha, targetAlpha, fadeSpeed * Time.deltaTime);
+        yield return null;
+    }
+    fadeCanvasGroup.alpha = targetAlpha;
+    fadeCanvasGroup.blocksRaycasts = false;
+}
+
 }
