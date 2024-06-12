@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     public void ItemOn()
     {
         mainText.SetActive(true);
+        
     }
 
     // 텍스트를 비활성화하는 메소드

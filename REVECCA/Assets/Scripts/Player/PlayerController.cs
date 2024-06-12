@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour
     private float originalHeight; // 원래 캐릭터 높이
     [SerializeField]
     private float crouchHeight = 0.5f; // 앉기 시 캐릭터 높이
+    private bool isSound;
+
+    public AudioClip Walk;
+    private AudioSource WalkSound;
+
 
     [Header("OutLine")]
     private Renderer renderers;
@@ -28,20 +33,15 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
+        WalkSound = GetComponent<AudioSource>();
         // Rigidbody 컴포넌트 가져오기
         rb = GetComponent<Rigidbody>();
+
+        WalkSound.loop = true;
+        WalkSound.clip = Walk;
     }
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.F) && currentItem != null)
-        {
-            GameManager.instance.ActivateTextOff();
-            GameManager.instance.DeactivateItem(currentItem);
-            
-            currentItem = null; // 참조 제거
-        }*/
-
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (currentItem != null)
@@ -54,6 +54,11 @@ public class PlayerController : MonoBehaviour
             {
                 // 힌트 활성화
                 GameManager.instance.ActivateHint();
+            }
+
+            if (isSound)
+            {
+                AudioManagerNBH.Audioinstance.PlaySFX(AudioManagerNBH.PlayerSFX.Click);
             }
         }
 
@@ -69,9 +74,7 @@ public class PlayerController : MonoBehaviour
                 transform.localScale = new Vector3(transform.localScale.x, originalHeight, transform.localScale.z);
             }
         }
-    }
-    void FixedUpdate()
-    {
+
         // 플레이어 입력 받기
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -91,6 +94,15 @@ public class PlayerController : MonoBehaviour
             // Rigidbody를 이용한 캐릭터 이동
             rb.MovePosition(transform.position + moveDir.normalized * speed * Time.fixedDeltaTime);
         }
+
+        if (direction != Vector3.zero && !WalkSound.isPlaying)
+        {
+            WalkSound.Play();
+        }
+        else if (direction == Vector3.zero)
+        {
+            WalkSound.Stop();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -102,17 +114,20 @@ public class PlayerController : MonoBehaviour
                 currentItem = other.gameObject; // 현재 아이템 설정
                 Debug.Log("아이템과 상호작용 충돌");
                 SetRendererMaterials(other);
+                isSound = true;
                 break;
             case "Interaction":
                 GameManager.instance.ActivateTextOn();
                 Debug.Log("상호작용 충돌");
                 SetRendererMaterials(other);
+                isSound = true;
                 break;
             case "newsPaper":
                 GameManager.instance.ActivateTextOn();
                 Debug.Log("상호작용 충돌");
                 SetRendererMaterials(other);
                 GameManager.instance.isHints[0] = true; // 신문 힌트 활성화
+                isSound = true;
                 //HintObject.instance.ActivateHint();
                 break;
             case "mail":
@@ -120,6 +135,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("상호작용 충돌");
                 SetRendererMaterials(other);
                 GameManager.instance.isHints[1] = true; // 신문 힌트 활성화
+                isSound = true;
                 //HintObject.instance.ActivateHint();
                 break;
             default:
@@ -134,23 +150,27 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.ActivateTextOff();
                 Debug.Log("아이템과 상호작용 충돌");
                 CloseRendererMaterials(other);
+                isSound = false;
                 break;
             case "Interaction":
                 GameManager.instance.ActivateTextOff();
                 Debug.Log("상호작용 충돌");
                 CloseRendererMaterials(other);
+                isSound = false;
                 break;
             case "newsPaper":
                 GameManager.instance.ActivateTextOff();
                 Debug.Log("상호작용 충돌");
                 CloseRendererMaterials(other);
                 GameManager.instance.isHints[0] = false;
+                isSound = false;
                 break;
             case "mail":
                 GameManager.instance.ActivateTextOff();
                 Debug.Log("상호작용 충돌");
                 CloseRendererMaterials(other);
                 GameManager.instance.isHints[1] = false;
+                isSound = false;
                 break;
             default:
                 break;
