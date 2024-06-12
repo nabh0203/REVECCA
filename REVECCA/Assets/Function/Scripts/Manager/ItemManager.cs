@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemManager : Interactable
 {
-
+    public GameObject NextQuest;
     protected override void Start()
     {
         base.Start();
@@ -11,6 +11,7 @@ public class ItemManager : Interactable
 
     protected override void OnInteract()
     {
+        NextQuest.SetActive(true);
         return;
     }
 

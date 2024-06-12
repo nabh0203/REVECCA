@@ -48,18 +48,17 @@ public abstract class Interactable : MonoBehaviour
             {
                 
                 Debug.Log("퀘스트 아이템등장");
-                otehrInteractableObject.SetActive(false);
+                otehrInteractableObject.SetActive(true);
             }
         }
         else
         {
             Debug.Log("퀘스트 진행 중...");
-
-            /*if (otehrInteractableObject == null)
-            {
-                otehrInteractableObject.SetActive(true);
-            }*/
         }
+        /*if (otehrInteractableObject == null)
+        {
+            otehrInteractableObject.SetActive(false);
+        }*/
     }
 
     protected abstract bool CheckQuestCompletion();

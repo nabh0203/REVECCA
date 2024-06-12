@@ -24,7 +24,7 @@ public class AudioManagerNBH : MonoBehaviour
     AudioSource[] playerSfxPlayers;
     int playerSFXchannelIndex;
 
-    public enum PlayerSFX { Click, Get, OpenDoor, Eat, safe, Box, Cabinet, Clean, LockOn, LockOff, newsPaper, mail, KeyDrop, Vase };
+    public enum PlayerSFX { Click, Get, OpenDoor};
 
 
     [Header("OtherSFX")]
@@ -142,6 +142,18 @@ public class AudioManagerNBH : MonoBehaviour
 
         }
 
+    }
+
+    public void StopPlaySFX(PlayerSFX Playersfx)
+    {
+        for (int index = 0; index < playerSfxPlayers.Length; index++)
+        {
+            if (playerSfxPlayers[index].clip == playerSfxClips[(int)Playersfx] && playerSfxPlayers[index].isPlaying)
+            {
+                playerSfxPlayers[index].Stop();
+                break; // 반복문 끊기
+            }
+        }
     }
     //OtehrSFX 호출기
     public void PlayOtehrSFX(OtherSFX otherSFX)
