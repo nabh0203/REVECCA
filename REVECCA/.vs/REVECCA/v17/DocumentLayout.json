@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|c:\\users\\meta\\desktop\\revecca\\revecca\\assets\\scripts\\manager\\audiomanagernbh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\audiomanagernbh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|c:\\users\\meta\\desktop\\revecca\\revecca\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Meta\\Desktop\\NBH\\AIWARKTY\\Assets\\AudioManagerKTY.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|c:\\users\\meta\\desktop\\revecca\\revecca\\assets\\scripts\\interaction\\hintobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interaction\\hintobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\assets\\scripts\\interaction\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interaction\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\assets\\scripts\\manager\\npcmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\npcmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\assets\\scripts\\manager\\itemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\itemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\assets\\scripts\\interaction\\passwordchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{525B4DDB-33A5-FDF0-3C07-66905FEDC3F8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interaction\\passwordchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AudioManagerKTY.cs",
+              "DocumentMoniker": "C:\\Users\\Meta\\Desktop\\NBH\\AIWARKTY\\Assets\\AudioManagerKTY.cs",
+              "RelativeDocumentMoniker": "..\\..\\NBH\\AIWARKTY\\Assets\\AudioManagerKTY.cs",
+              "ToolTip": "C:\\Users\\Meta\\Desktop\\NBH\\AIWARKTY\\Assets\\AudioManagerKTY.cs",
+              "RelativeToolTip": "..\\..\\NBH\\AIWARKTY\\Assets\\AudioManagerKTY.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T06:00:28.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AudioManagerNBH.cs",
+              "DocumentMoniker": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Manager\\AudioManagerNBH.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\AudioManagerNBH.cs",
+              "ToolTip": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Manager\\AudioManagerNBH.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\AudioManagerNBH.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAmwHMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T01:59:10.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HintObject.cs",
+              "DocumentMoniker": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Interaction\\HintObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\HintObject.cs",
+              "ToolTip": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Interaction\\HintObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interaction\\HintObject.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwB8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T00:30:00.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
+              "ViewState": "AQIAAI8AAAAAAAAAAAAgwKwAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T00:58:25.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Manager\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\GameManager.cs",
+              "ToolTip": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Manager\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\GameManager.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAYwFoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T09:09:28.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PasswordChecker.cs",
+              "DocumentMoniker": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Interaction\\PasswordChecker.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\PasswordChecker.cs",
+              "ToolTip": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Interaction\\PasswordChecker.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interaction\\PasswordChecker.cs",
+              "ViewState": "AQIAALkAAAAAAAAAAAArwMUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T00:45:59.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NPCManager.cs",
+              "DocumentMoniker": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Manager\\NPCManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\NPCManager.cs",
+              "ToolTip": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Manager\\NPCManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\NPCManager.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAnwHQAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T07:27:40.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Interactable.cs",
+              "DocumentMoniker": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Interaction\\Interactable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interaction\\Interactable.cs",
+              "ToolTip": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Interaction\\Interactable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interaction\\Interactable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T00:45:23.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ItemManager.cs",
+              "DocumentMoniker": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Manager\\ItemManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\ItemManager.cs",
+              "ToolTip": "C:\\Users\\Meta\\Desktop\\REVECCA\\REVECCA\\Assets\\Scripts\\Manager\\ItemManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\ItemManager.cs",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAWwHgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T07:27:33.481Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
