@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] Items;
     public GameObject[] itemImages; // 아이템 번호에 따른 이미지 배열
     public GameObject[] inventoryImages; // 아이템 번호에 따른 이미지 배열
-    public GameObject[] hintImages; // 힌트 이미지 배열c
+    public GameObject[] hintImages; // 힌트 이미지 배열
 
     // 델리게이트 선언
     public delegate void Action();
@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour
     private int activeInventoryIndex = -1;
     //아이템 활성화를 위한 bool형값
     public bool[] IsitemActiveStates;
-    public bool[] Ishint; // 힌트 활성화 상태 배열
+
+    // 힌트 활성화 여부 배열
+    public bool[] isHints;
 
     void Awake()
     {
@@ -51,7 +53,12 @@ public class GameManager : MonoBehaviour
 
         // itemActiveStates 배열 초기화
         IsitemActiveStates = new bool[Items.Length];
-        //shint = new bool[hintImages.Length];
+        // 힌트 활성화 여부 배열 초기화
+        isHints = new bool[hintImages.Length];
+        for (int i = 0; i < isHints.Length; i++)
+        {
+            isHints[i] = false;
+        }
     }
 
     private void OnDestroy()
@@ -124,20 +131,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             DeactivateActiveItemImage();
-            //DeactivateActiveHintImage();
+            DeactivateHint();
         }
-
-        /*for (int i = 0; i < Ishint.Length; i++)
-        {
-            if (Ishint[i] && i < hintImages.Length)
-            {
-                hintImages[i].SetActive(true);
-            }
-            else if (i < hintImages.Length)
-            {
-                hintImages[i].SetActive(false);
-            }
-        }*/
     }
 
     private void ActivateItemImage(int index)
@@ -164,16 +159,27 @@ public class GameManager : MonoBehaviour
             inventoryImages[activeInventoryIndex].SetActive(false);
             activeInventoryIndex = -1;
         }
-
-        
     }
-    /*private void DeactivateActiveHintImage()
+
+    public void ActivateHint()
     {
-        // 모든 힌트 이미지를 비활성화
-        for (int i = 0; i < hintImages.Length; i++)
+        for (int i = 0; i < isHints.Length; i++)
+        {
+            if (isHints[i])
+            {
+                ItemOff();
+                Debug.Log($"힌트 {i}");
+                hintImages[i].SetActive(true);
+            }
+        }
+    }
+
+    public void DeactivateHint()
+    {
+        for (int i = 0; i < isHints.Length; i++)
         {
             hintImages[i].SetActive(false);
         }
-    }*/
+    }
 
 }

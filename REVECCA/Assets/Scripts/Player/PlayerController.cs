@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float crouchHeight = 0.5f; // 앉기 시 캐릭터 높이
 
-
     [Header("OutLine")]
     private Renderer renderers;
     private List<Material> materialList = new List<Material>();
@@ -35,12 +34,27 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && currentItem != null)
+        /*if (Input.GetKeyDown(KeyCode.F) && currentItem != null)
         {
             GameManager.instance.ActivateTextOff();
             GameManager.instance.DeactivateItem(currentItem);
             
             currentItem = null; // 참조 제거
+        }*/
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (currentItem != null)
+            {
+                GameManager.instance.ActivateTextOff();
+                GameManager.instance.DeactivateItem(currentItem);
+                currentItem = null; // 참조 제거
+            }
+            else
+            {
+                // 힌트 활성화
+                GameManager.instance.ActivateHint();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -94,10 +108,19 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("상호작용 충돌");
                 SetRendererMaterials(other);
                 break;
-            case "Hint":
+            case "newsPaper":
                 GameManager.instance.ActivateTextOn();
                 Debug.Log("상호작용 충돌");
                 SetRendererMaterials(other);
+                GameManager.instance.isHints[0] = true; // 신문 힌트 활성화
+                //HintObject.instance.ActivateHint();
+                break;
+            case "mail":
+                GameManager.instance.ActivateTextOn();
+                Debug.Log("상호작용 충돌");
+                SetRendererMaterials(other);
+                GameManager.instance.isHints[1] = true; // 신문 힌트 활성화
+                //HintObject.instance.ActivateHint();
                 break;
             default:
                 break;
@@ -117,16 +140,22 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("상호작용 충돌");
                 CloseRendererMaterials(other);
                 break;
-            case "Hint":
+            case "newsPaper":
                 GameManager.instance.ActivateTextOff();
                 Debug.Log("상호작용 충돌");
                 CloseRendererMaterials(other);
+                GameManager.instance.isHints[0] = false;
+                break;
+            case "mail":
+                GameManager.instance.ActivateTextOff();
+                Debug.Log("상호작용 충돌");
+                CloseRendererMaterials(other);
+                GameManager.instance.isHints[1] = false;
                 break;
             default:
                 break;
         }
     }
-
     private void SetRendererMaterials(Collider other)
     {
         Renderer renderers = other.gameObject.GetComponent<Renderer>();
