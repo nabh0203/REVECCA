@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
     // 힌트 활성화 여부 배열
     public bool[] isHints;
 
+    //활성화 된 아이템을 인지하기 위한 참조 함수
+    public openInteraction openTrigger;
+    public bool isMrKeyActive;
+    public bool isDrKeyActive;
+
     void Awake()
     {
         if (instance == null)
@@ -113,6 +118,18 @@ public class GameManager : MonoBehaviour
                     IsitemActiveStates[i] = true;
                 }
             }
+            // 아이템 번호가 2 또는 3인 경우 Bool 값을 전달
+            if (itemNumber == 2)
+            {
+                Debug.Log("3번 활성화");
+                isDrKeyActive = true;
+            }
+
+            if (itemNumber == 3)
+            {
+                Debug.Log("4번 활성화");
+                isMrKeyActive = true;
+            }
         }
     }
 
@@ -134,6 +151,26 @@ public class GameManager : MonoBehaviour
             DeactivateActiveItemImage();
             DeactivateHint();
         }
+        // activeInventoryIndex가 3번 또는 4번으로 활성화되어 있는지 확인
+        /*if (activeInventoryIndex == 3)
+        {
+            Debug.Log("3번 활성화");
+            isMrKeyActive = true;
+        }
+        else
+        {
+            isMrKeyActive = false;
+        }
+
+        if (activeInventoryIndex == 4)
+        {
+            Debug.Log("4번 활성화");
+            isDrKeyActive = true;
+        }
+        else
+        {
+            isDrKeyActive = false;
+        }*/
     }
 
     private void ActivateItemImage(int index)
@@ -149,6 +186,16 @@ public class GameManager : MonoBehaviour
         {
             inventoryImages[index].SetActive(true);
             activeInventoryIndex = index;
+            /*// 3번 배열 아이템 활성화 시 mrKey 활성화 및 관련 bool 변수 설정
+            if (index == 3)
+            {
+                isMrKeyActive = true;
+            }
+
+            if (index == 4)
+            {
+               isDrKeyActive = true;
+            }*/
         }
     }
 

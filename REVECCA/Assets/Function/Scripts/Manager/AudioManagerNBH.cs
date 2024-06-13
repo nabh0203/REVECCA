@@ -15,7 +15,7 @@ public class AudioManagerNBH : MonoBehaviour
     AudioSource[] bgmPlayer;
     int bgmChannelIndex;
 
-    public enum BGM { mainPage, main, Op, mainBGM, Room};
+    public enum BGM { mainPage, main, Op, mainBGM, Room };
 
     [Header("PlayerSFX")]
     public AudioClip[] playerSfxClips;
@@ -24,7 +24,7 @@ public class AudioManagerNBH : MonoBehaviour
     AudioSource[] playerSfxPlayers;
     int playerSFXchannelIndex;
 
-    public enum PlayerSFX { Click, Get, OpenDoor};
+    public enum PlayerSFX { Click, Get, OpenDoor };
 
 
     [Header("OtherSFX")]
@@ -34,7 +34,7 @@ public class AudioManagerNBH : MonoBehaviour
     AudioSource[] otherSfxPlayers;
     int otherSFXchannelIndex;
 
-    public enum OtherSFX { DanverseStep, MaidStep, DogStep,DanverseCloseDoor,DogBark , DogSound };
+    public enum OtherSFX { DanverseStep, MaidStep, DogStep, DanverseCloseDoor, DogBark, DogSound };
 
     void Awake()
     {
@@ -51,46 +51,46 @@ public class AudioManagerNBH : MonoBehaviour
     void Start()
     {
         {
-            Init();
+            /*----------------------------------BGM------------------------------------------*/
+            GameObject bgmObject = new GameObject("BgmPlayer");
+            bgmObject.transform.parent = transform;
+            bgmPlayer = new AudioSource[bgmChannels];
+
+            for (int index = 0; index < bgmPlayer.Length; index++)
+            {
+                bgmPlayer[index] = bgmObject.AddComponent<AudioSource>();
+                bgmPlayer[index].playOnAwake = false;
+                bgmPlayer[index].volume = bgmVolume;
+                bgmPlayer[index].loop = true;
+            }
+            /*----------------------------------PlayerSFX------------------------------------------*/
+            GameObject playerSFXbgmObject = new GameObject("PlayerSfxPlayer");
+            playerSFXbgmObject.transform.parent = transform;
+            playerSfxPlayers = new AudioSource[playerSfxChannels];
+
+            for (int index = 0; index < playerSfxPlayers.Length; index++)
+            {
+                playerSfxPlayers[index] = playerSFXbgmObject.AddComponent<AudioSource>();
+                playerSfxPlayers[index].playOnAwake = false;
+                playerSfxPlayers[index].volume = playerSfxVolume;
+            }
+            /*----------------------------------OtherSFX------------------------------------------*/
+            GameObject otherSFXbgmObject = new GameObject("OtherSfxPlayer");
+            otherSFXbgmObject.transform.parent = transform;
+            otherSfxPlayers = new AudioSource[otherSfxChannels];
+
+            for (int index = 0; index < otherSfxPlayers.Length; index++)
+            {
+                otherSfxPlayers[index] = playerSFXbgmObject.AddComponent<AudioSource>();
+                otherSfxPlayers[index].playOnAwake = false;
+                otherSfxPlayers[index].volume = otherSfxVolume;
+            }
         }
     }
-    void Init()
+/*    void Init()
     {
-        /*----------------------------------BGM------------------------------------------*/
-        GameObject bgmObject = new GameObject("BgmPlayer");
-        bgmObject.transform.parent = transform;
-        bgmPlayer = new AudioSource[bgmChannels];
-
-        for (int index = 0; index < bgmPlayer.Length; index++)
-        {
-            bgmPlayer[index] = bgmObject.AddComponent<AudioSource>();
-            bgmPlayer[index].playOnAwake = false;
-            bgmPlayer[index].volume = bgmVolume;
-            bgmPlayer[index].loop = true;
-        }
-        /*----------------------------------PlayerSFX------------------------------------------*/
-        GameObject playerSFXbgmObject = new GameObject("PlayerSfxPlayer");
-        playerSFXbgmObject.transform.parent = transform;
-        playerSfxPlayers = new AudioSource[playerSfxChannels];
-
-        for (int index = 0; index < playerSfxPlayers.Length; index++)
-        {
-            playerSfxPlayers[index] = playerSFXbgmObject.AddComponent<AudioSource>();
-            playerSfxPlayers[index].playOnAwake = false;
-            playerSfxPlayers[index].volume = playerSfxVolume;
-        }
-        /*----------------------------------OtherSFX------------------------------------------*/
-        GameObject otherSFXbgmObject = new GameObject("OtherSfxPlayer");
-        otherSFXbgmObject.transform.parent = transform;
-        otherSfxPlayers = new AudioSource[otherSfxChannels];
-
-        for (int index = 0; index < otherSfxPlayers.Length; index++)
-        {
-            otherSfxPlayers[index] = playerSFXbgmObject.AddComponent<AudioSource>();
-            otherSfxPlayers[index].playOnAwake = false;
-            otherSfxPlayers[index].volume = otherSfxVolume;
-        }
-    }
+        
+    }*/
     //BGM 호출기
     //AudioManagerNBH.instance.PlayBGM(AudioManagerNBH.BGM.오디오이름); - 이를 사운드 넣을 함수 및 코드에 작성.
     //참조시 아래처럼 사용
@@ -112,7 +112,7 @@ public class AudioManagerNBH : MonoBehaviour
         }
 
     }
-    public void StopBGM(BGM Bgm)
+    /*public void StopBGM(BGM Bgm)
     {
         for (int index = 0; index < bgmPlayer.Length; index++)
         {
@@ -122,7 +122,7 @@ public class AudioManagerNBH : MonoBehaviour
                 break; // 반복문 끊기
             }
         }
-    }
+    }*/
 
 
     //PlaySFX 호출기
@@ -174,3 +174,4 @@ public class AudioManagerNBH : MonoBehaviour
 
     }
 }
+

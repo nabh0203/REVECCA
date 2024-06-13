@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip Walk;
     private AudioSource WalkSound;
 
-
     [Header("OutLine")]
     private Renderer renderers;
     private List<Material> materialList = new List<Material>();

@@ -4,6 +4,9 @@ using UnityEngine;
 public class ItemManager : Interactable
 {
     public GameObject NextQuest;
+    public GameObject mrKey;
+    public GameObject drKey;
+
     protected override void Start()
     {
         base.Start();
@@ -11,7 +14,10 @@ public class ItemManager : Interactable
 
     protected override void OnInteract()
     {
-        NextQuest.SetActive(true);
+        if(NextQuest != null) 
+        { 
+            NextQuest.SetActive(true);
+        }
         return;
     }
 
@@ -24,6 +30,7 @@ public class ItemManager : Interactable
     {
         GameManager.instance.DeactivateItem(this.gameObject);
         ProceedQuest();
+
     }
 
     

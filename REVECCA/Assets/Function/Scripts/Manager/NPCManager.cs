@@ -10,6 +10,7 @@ public class NPCManager : Interactable
     public bool isInteractionTrigger = false;
     public Iteminteraction Iteminteraction;
 
+
     protected override void OnInteract()
     {
         npcObject = gameObject; // 현재 상호작용 중인 NPC 오브젝트 저장

@@ -18,7 +18,7 @@ public class Iteminteraction : MonoBehaviour
     AudioSource[] itemSfxPlayers;
     int itemSFXchannelIndex;
 
-    public enum ItemSFX { Eat, safe, Box, Cabinet, Clean, LockOn, LockOff, newsPaper, mail, KeyDrop, Vase };
+    public enum ItemSFX { Eat, safe, Box, Cabinet, Clean, LockOn, LockOff, newsPaper, mail, KeyDrop, Vase, Push, OpenDoor };
     private void Start()
     {
         // itemSfxPlayers 배열 초기화
