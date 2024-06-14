@@ -50,7 +50,7 @@ public class Ending : MonoBehaviour
             cinemachineCamera.gameObject.SetActive(true);
         }
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(8);
 
         SceneManager.LoadScene("MainScene");
     }

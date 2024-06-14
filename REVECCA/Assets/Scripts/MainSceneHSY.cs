@@ -64,7 +64,9 @@ public class MainSceneHSY : MonoBehaviour
 
         public void OnClickQuit()
     {
-#if UNITY_EDITOR
+        // 애플리케이션 종료
+        Application.Quit();
+#if     UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
         Debug.Log("종료");
