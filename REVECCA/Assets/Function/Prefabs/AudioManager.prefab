@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6161500512324592930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2897663078186350839}
+  - component: {fileID: 5992202824604351562}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2897663078186350839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6161500512324592930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 997.9776, y: 567.65967, z: -53.870956}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5992202824604351562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6161500512324592930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dedb8b1b306bc9419c308ecb5b045fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmClip:
+  - {fileID: 8300000, guid: 3179ed08c07edbb40a6e7e092fd064a6, type: 3}
+  - {fileID: 8300000, guid: a4c670c2a6241dd48af1ef2d4877c789, type: 3}
+  - {fileID: 8300000, guid: 629ab3e482d8f1f438fffd076aff73b2, type: 3}
+  - {fileID: 8300000, guid: 75ed8e78a5345ea408d43542bded11d9, type: 3}
+  - {fileID: 8300000, guid: fea145f596d49e64b87bdc89be013e10, type: 3}
+  bgmVolume: 5
+  bgmChannels: 5
+  playerSfxClips:
+  - {fileID: 8300000, guid: 032fb420f20800a4d821b120329824bf, type: 3}
+  - {fileID: 8300000, guid: 82e858ff5f7d69945aafeaff16d73fe5, type: 3}
+  - {fileID: 8300000, guid: 598040b69d9ed5e47b0b1a6743ebc261, type: 3}
+  - {fileID: 8300000, guid: 7905dd244edf839469a7a682901a3046, type: 3}
+  - {fileID: 8300000, guid: 6d458f7309990ff46b446285f0c735fe, type: 3}
+  - {fileID: 8300000, guid: f7bf047b5d7dc7c40a38b90520d0296e, type: 3}
+  - {fileID: 8300000, guid: 1bf6af984321d564da90f391dc558319, type: 3}
+  - {fileID: 8300000, guid: a4da4d0251205ba448c8d75f1a0e38a1, type: 3}
+  - {fileID: 8300000, guid: 7b7166cae69953d4d95d99113f47c7dd, type: 3}
+  - {fileID: 8300000, guid: 0d81149f1d406f944bedecc670841e52, type: 3}
+  - {fileID: 8300000, guid: 5716bf5d2708e3243976a6b2e2566e02, type: 3}
+  - {fileID: 8300000, guid: c14b5d1f5082a894f93e6e4e3c287ed4, type: 3}
+  - {fileID: 8300000, guid: db0474bd59acb454ea5059d42580771d, type: 3}
+  - {fileID: 8300000, guid: 08fa7705e04e70c4ea42781d6ec12109, type: 3}
+  playerSfxVolume: 5
+  playerSfxChannels: 14
+  otherSfxClips:
+  - {fileID: 8300000, guid: ae9414631d9ff194da0c8a7f8314ee8f, type: 3}
+  - {fileID: 8300000, guid: b6f5989aa44fabe4ea03c64fabe07d30, type: 3}
+  - {fileID: 8300000, guid: 1bc453d5be413ec49a478e2cb1db8761, type: 3}
+  - {fileID: 8300000, guid: b6d96f7b3acddff4b9dca7f925669017, type: 3}
+  - {fileID: 8300000, guid: 9dec3c855cd86484999223ec694ea07b, type: 3}
+  - {fileID: 8300000, guid: 74783ae53dc1fee4a96ac3fa206525ea, type: 3}
+  otherSfxVolume: 5
+  otherSfxChannels: 5

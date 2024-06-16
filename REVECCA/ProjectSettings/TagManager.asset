@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Item
   - Interaction
+  - mail
+  - newsPaper
   layers:
   - Default
   - TransparentFX
