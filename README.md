@@ -3,6 +3,11 @@ REVECCA
 
 ![스크린샷 2024-10-22 050112](https://github.com/user-attachments/assets/69ad2d27-b2a1-4838-9be1-51055b00003f)
 
+**사용 기술**
+
+- Unity
+- C#
+- Dotween
 
 
 ## 소설 "레베카"와 "방탈출"을 결합한 콘텐츠 
